@@ -1,0 +1,18 @@
+
+<mat-grid-list  cols="1">
+        <mat-grid-tile class="back">
+            <div>
+            <input class="form-control"
+                type="text"
+                required
+                placeholder="Usuario"
+                [(ngModel)]="userName"
+                autocomplete="off">
+            </div>
+            <button mat-fab color="accent"
+                    (click)="login()">
+                Ingresar
+            </button>
+        </mat-grid-tile>
+</mat-grid-list>
+

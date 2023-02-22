@@ -1,0 +1,36 @@
+<h1 class="title">MantuM</h1>
+<mat-divider></mat-divider>
+<br>
+
+<div class="container">
+    <div class="card">
+            <div class="row p-3">
+                <div *ngFor="let video of videos" class="col-md-6 col-sm-6">
+                    <youtube-player [videoId]="video.video"
+                                    class="card-img-top"
+                                    suggestedQuality="highres"
+                                    [height]="250" [width]="360">
+                                    <div class="card-body">
+                                    <p class="card-text">
+                                    {{video}}
+                                </p>
+                                    </div>
+                    </youtube-player>              
+                </div>
+            </div>
+    </div>
+</div>
+<!-- <div class="row">
+    <div *ngFor="let video of videos" class="col-md-4 col-sm-6">
+        <div class="card">
+            <img [src]="gif.images.downsized_medium.url"
+                alt="gif.title"
+                class="card-img-top">
+            <div class="card-body">
+                <p class="card-text">
+                    {{gif.title}}
+                </p>
+            </div>
+        </div>
+    </div>
+ </div> -->

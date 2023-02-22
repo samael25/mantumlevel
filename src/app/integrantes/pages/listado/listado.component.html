@@ -1,0 +1,57 @@
+<div  fxLayout="row wrap">
+<div class="row">
+<div class="col-9">
+<h1>Integrantes</h1>
+</div>
+<div class="col-sm-3">
+    <div class="dropdown">
+        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdown1" data-toggle="dropdown">
+            Links redes sociales
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="https://www.youtube.com/@mantumlives25">youtube</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://www.facebook.com/profile.php?id=100063254527781">facebook</a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<mat-divider></mat-divider>
+<br>
+
+ 
+<div  fxLayout="row wrap" fxLayoutAlign="center stretch"
+      >
+      <a href="https://www.youtube.com/@mantumlives25/about"></a>
+        <mat-card class="marg"
+                  fxFlex="18"
+                 *ngFor="let integrante of integrantes">
+            <mat-card-header>
+                <mat-card-title>{{integrante.Nombre}}</mat-card-title>
+                <mat-card-subtitle>{{integrante.Descripcion}}</mat-card-subtitle>
+            </mat-card-header>
+
+            <img mat-card-image src="{{integrante.Imagen}}">
+            <label>Ingreso: {{integrante.FechaCreacion | date}}</label>
+            <br>
+            <label>Rol: {{integrante.NombreRol}}</label>
+            
+
+            <mat-card-actions>
+                <button mat-stroked-button color="warn"
+                        [routerLink]="['/integrantes/info', integrante.IdUsuario]"
+                >Leer mas...</button>
+            </mat-card-actions>
+        </mat-card>
+       
+</div>
+
+        
+        
+  
+
+
+      
+       
+  

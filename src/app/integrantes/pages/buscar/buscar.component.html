@@ -1,0 +1,39 @@
+<h1>Album: Leve</h1>
+<input type="number" [(ngModel)]="idRola">
+<button (click)="getRola()">Buscar</button>
+<br>
+<label *ngIf="rola">{{rola[0].Nombre}}</label>
+<br>
+<label *ngIf="rola">{{rola[0].Genero}}</label>
+<br>
+<audio *ngIf="rola" controls [src]='rola[0].CancionUrl' type="audio/mp3">
+    Your browser does not support the <code>audio</code> element.
+</audio>
+<label *ngIf="rola">{{rola[0].CancionUrl}}</label>
+<mat-divider></mat-divider>
+<br>
+
+    <button mat-stroked-button color="warn"
+            (click)="regresar()">
+            Regresar
+    </button>
+
+<div  fxLayout="row wrap"
+      fxLayout.sm="column"
+      fxLayoutAlign="center stretch">
+        <mat-card class="marg"
+                  fxFlex="40"
+                  fxFlex.lg="15"
+                  fxFlex.md="35"
+                  *ngFor="let cancion of canciones">
+            <mat-card-header>
+                <mat-card-title>Cancion: {{cancion.Nombre}}</mat-card-title>
+                <mat-card-subtitle>Genero: {{cancion.Genero}}</mat-card-subtitle>
+                <audio *ngIf="cancion.CancionUrl" controls [src]='cancion.CancionUrl' type="audio/mp3">
+                    Your browser does not support the <code>audio</code> element.
+                </audio>
+            </mat-card-header>
+        </mat-card>
+</div>
+
+

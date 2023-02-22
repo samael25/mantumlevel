@@ -1,0 +1,60 @@
+<h1>Miembro activo de MantuM</h1>
+<mat-divider></mat-divider>
+<br>
+
+<mat-grid-list cols="1" *ngIf="!usuario; else divUsuario">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divUsuario>
+    <div fxLayout="row"
+        fxLayout.xs="column"
+        fxLayoutGap="30px">
+        <div fxFlex="50">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{usuario?.Nombre}}</mat-card-title>
+                    <mat-card-subtitle>{{usuario?.Descripcion}}</mat-card-subtitle>
+                </mat-card-header>
+    
+                <img mat-card-image src="{{usuario?.Imagen}}">
+    
+            </mat-card>
+        </div>
+        <div fxFlex="50">
+            <mat-card>
+                <h1>{{usuario?.NombreReal}}</h1>
+                <ul>
+                    <li> Date of birth: {{ usuario?.FechaNacimiento | date }}</li>
+                    <li>From: {{usuario?.LugarNacimiento}}</li>
+                    <li>{{usuario?.Trayectoria}}<li>
+                </ul>
+                <button mat-stroked-button color="warn"
+                        (click)="regresar()">
+                    Regresar
+                </button>
+            </mat-card>
+        </div>
+    </div>
+</ng-template>
+
+     
+     
+     
+            
+               
+            
+               
+
+            
+
+
+        
+  
+
+
+      
+       
+  
